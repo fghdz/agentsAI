@@ -22,7 +22,7 @@
         const from = '***************';
         const openId = '123'; //用户标识，可以自定义
 
-        let MAX_CHATS =3;//限定每天的次数
+        let MAX_CHATS =3;//限定每天的次数，使用控制台输入：resetChatCount(); 即可重置次数
 
 
 注意：目前文心智囊体每天就500次的调用次数，
