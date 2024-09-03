@@ -1,4 +1,4 @@
-## 使用文心智能体API调用
+## 最简单的方法使用文心智能体API调用
 在网页上使用自己创建的API
 
 你需要修改的地方：
@@ -17,3 +17,12 @@
 文心智能体官方文档：https://agents.baidu.com/docs/external-deploy/API_calls/
 
 项目预览：https://fghdz.top/index.php/750.html
+
+## 获取你的专属APi
+前往 https://agents.baidu.com/
+
+创建智囊体 赋予AI的性格特征
+
+创建成功后点击部署-API调用-复制API的ID，密钥，以及你智能体的ID
+
+粘贴到源码里即可使用
