@@ -1,7 +1,7 @@
-        const appId = '2oaCahtOHCWy2wsE1VAgcglMsLN6Rs07';   //智能体API ID，通过你的智能体API页面获取
-        const secretKey = 'RaDDc3qVIl49GtrvCxTY1qA8PdJ3TjfX';  //智能体API 密钥，通过你的智能API体页面获取
-        const source = '2oaCahtOHCWy2wsE1VAgcglMsLN6Rs07';  //智能体 ID，通过你的智能体选项里的复制ID选项获取
-        const from = 'openapi';
+        const appId = '***********';   //智能体API ID，通过你的智能体API页面获取
+        const secretKey = '*****************';  //智能体API 密钥，通过你的智能API体页面获取
+        const source = '****************';  //智能体 ID，通过你的智能体选项里的复制ID选项获取
+        const from = '***************';
         const openId = '123'; //用户标识，可以自定义
 
         let MAX_CHATS =3;//限定每天的次数
@@ -43,7 +43,7 @@
         function sendMessage() {
             let chatCount = localStorage.getItem('chatCount');
             if (chatCount <= 0) {
-                displayAIMessage('【自动回复】 老师已经对你失去了耐心，你的愚蠢的问题不值得回答，你应该珍惜我的时间，记住，智慧是需要自己去追求和探索的，而不是通过无休止的询问来获取的，明天再来问我吧！');//调取失败的回复
+                displayAIMessage('未知错误，请尝试');//调取失败的回复
                 return;
             }
 
@@ -57,7 +57,7 @@
             displayUserMessage(userInput);
 
             // Show the AI thinking message
-            const thinkingMessageElement = displayAIMessage('老师正在输入中...');
+            const thinkingMessageElement = displayAIMessage('AI思考中...');
 
             const url = `https://agentapi.baidu.com/assistant/getAnswer?appId=${appId}&secretKey=${secretKey}`;
 
@@ -89,12 +89,12 @@
                     thinkingMessageElement.textContent = data.data.content[0].data;
                     console.log('API Response:', data); // Log the entire API response
                 } else {
-                    thinkingMessageElement.textContent = '【自动回复】我要求你立刻调整你的态度，找到问题的核心，并用最清晰最直接的方式表达出来，现在请你重新组织自己的语言重新提问';//调取失败的回复
+                    thinkingMessageElement.textContent = '未知错误，请尝试';//调取失败的回复
                 }
             })
             .catch(error => {
                 console.error('Error:', error);
-                thinkingMessageElement.textContent = '【自动回复】我没空跟你解释你这个白痴问题，你等我有空了再跟你解答这个傻瓜问题';//调取失败的回复
+                thinkingMessageElement.textContent = '未知错误，请尝试';//调取失败的回复
             });
 
             // Clear the input box
@@ -140,4 +140,4 @@
         initializeChatCount();
 
         // Optional: Display some initial info
-        displayAIMessage("我是维里塔斯·拉帝奥，博识学会的学者和老师，也是一介庸人。如果有一天，你的脑袋出现了「愚钝」的症状，届时请称呼我为——「真理医生」");//开场白
+        displayAIMessage("你好，请问有什么可以帮助你");//开场白
